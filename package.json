@@ -29,6 +29,10 @@
 		"onCommand:extension.remove",
 		"onView:packages"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kognise/vscode-upm.git"
+	},
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
