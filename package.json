@@ -1,0 +1,118 @@
+{
+	"name": "vscode-upm",
+	"displayName": "VSCode UPM",
+	"description": "Repl.it's amazing package manager workflow in Visual Studio Code",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"upm",
+		"packager",
+		"package",
+		"manager",
+		"repl.it",
+		"repl",
+		"universal",
+		"npm",
+		"pip",
+		"poetry"
+	],
+	"preview": true,
+	"icon": "media/icon.png",
+	"activationEvents": [
+		"onCommand:extension.install",
+		"onCommand:extension.add",
+		"onCommand:extension.remove",
+		"onView:packages"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.install",
+				"title": "Install Packages"
+			},
+			{
+				"command": "extension.add",
+				"title": "Add Packages"
+			},
+			{
+				"command": "extension.remove",
+				"title": "Remove Packages"
+			},
+			{
+				"command": "packages.remove",
+				"title": "Remove"
+			},
+			{
+				"command": "packages.refresh",
+				"title": "Refresh",
+				"icon": {
+					"light": "media/refresh.light.svg",
+					"dark": "media/refresh.dark.svg"
+				}
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "upm",
+					"title": "UPM",
+					"icon": "media/icon.svg"
+				}
+			]
+		},
+		"views": {
+			"upm": [
+				{
+					"id": "packages",
+					"name": "Packages"
+				}
+			]
+		},
+		"menus": {
+			"view/item/context": [
+				{
+					"command": "packages.remove",
+					"when": "view == packages && viewItem == package"
+				}
+			],
+			"view/title": [
+				{
+					"command": "packages.refresh",
+					"when": "view == packages",
+					"group": "navigation"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "packages.remove",
+					"when": "false"
+				},
+				{
+					"command": "packages.refresh",
+					"when": "false"
+				}
+			]
+		}
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.39.0",
+		"eslint": "^5.13.0",
+		"glob": "^7.1.4",
+		"typescript": "^3.3.1"
+	},
+	"dependencies": {
+		"execa": "^3.2.0",
+		"fs-extra": "^8.1.0",
+		"node-watch": "^0.6.3",
+		"vscode": "^1.1.36"
+	}
+}
