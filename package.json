@@ -2,7 +2,7 @@
 	"name": "vscode-upm",
 	"displayName": "VSCode UPM",
 	"description": "Repl.it's amazing package manager workflow in Visual Studio Code",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "kognise",
 	"engines": {
 		"vscode": "^1.39.0"
