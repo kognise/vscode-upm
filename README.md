@@ -1,3 +1,6 @@
+> 🚧 **This project is maintenance mode!** 🚧
+> I will be fixing and responding to pull requests and issues, but it is not in active development.
+
 # VSCode UPM
 
 A cross-language package manager workflow for VSCode based on [Repl.it's awesome UPM](https://repl.it/site/blog/upm).
